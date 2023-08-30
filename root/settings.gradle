@@ -1,0 +1,8 @@
+rootProject.name = 'root'
+
+include ':common', ':app1', ':app2'
+
+project(':common').projectDir = new File("../common")
+project(':app1').projectDir = new File("../app1")
+project(':app2').projectDir = new File("../app2")
+

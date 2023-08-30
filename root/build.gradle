@@ -1,0 +1,20 @@
+configurations.all {
+    resolutionStrategy.dependencySubstitution {
+        substitute module("com.my.common:common") with project(':common')
+        substitute module("com.my.app1:app1") with project(':app1')
+        substitute module("com.my.app2:app2") with project(':app2')
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.apache.commons:commons-lang3:3.13.0'
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    }
+}
